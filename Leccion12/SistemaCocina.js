@@ -83,8 +83,18 @@ class Comanda{
 let plato1 = new Menu('Combo de mariscos con fresco natural de limon', 15);
 let plato2 = new Menu('Sopa de Pollo con Coca Cola', 12);
 let plato3 = new Menu('Burrito mixto con bebida incluida', 6);
+let plato4 = new Menu('Pupusas con refresco', 50.00);
+
 
 let comanda1 = new Comanda();
 comanda1.AgregarPlatoMenu(plato1);
 comanda1.AgregarPlatoMenu(plato3);
+comanda1.AgregarPlatoMenu(plato4);
+comanda1.AgregarPlatoMenu(plato4);
+comanda1.AgregarPlatoMenu(plato4);
+comanda1.AgregarPlatoMenu(plato4);
+comanda1.AgregarPlatoMenu(plato4);
+comanda1.AgregarPlatoMenu(plato4);
+comanda1.AgregarPlatoMenu(plato4);
+
 comanda1.mostrarComanda();
