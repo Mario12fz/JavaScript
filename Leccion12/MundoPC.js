@@ -166,3 +166,13 @@ console.log(computadora1.toString());
 let computadora2 = new Computadora('Dell', monitor2, raton2, teclado2);
 console.log(computadora2.toString());
 
+let orden1 = new Orden();
+orden1.agregarComputadora(computadora1);
+orden1.agregarComputadora(computadora2);
+orden1.agregarComputadora(computadora2);
+orden1.mostrarOrden();
+
+let orden2 = new Orden();
+orden2.agregarComputadora(computadora1);
+orden2.agregarComputadora(computadora2);
+orden2.mostrarOrden();
