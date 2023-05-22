@@ -5,16 +5,72 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejemplo DOM con JS</title>
+    <style>
+        .color{
+            color: blue;
+        }
+    </style>
 </head>
 <body>
-    <h1 id="cabecero">Ejemplo con DOM con JS</h1>
-    <p id="parrafo"> QUE ONDA PERRI</p>
+    <h1 id="cabecero" class="color">Ejemplo con DOM con JS</h1>
+    <p id="parrafo1" class="color"> QUE ONDA PERRI</p>
+    <p id="parrafo2" class="color"> Nuevo Parrafo</p>
+    <h1 class="color" > UNO </h1>
+    <h1 class="color" > DOS </h1>
+    <h1 class="color"> Tres </h1>
     <script>
-        let cabecero = document.getElementById('cabecero').innerHTML;
-        console.log(cabecero)
+       /*
 
-        let parrafo = document.getElementById('parrafo').innerHTML;
-        console.log(parrafo);
+       //------------------------  getElementById ------------------------------ //    
+
+
+       let cabecero = document.getElementById('cabecero');
+        console.log(`valor cabecero : ${cabecero.innerHTML}`);
+        cabecero.innerHTML = 'Ejempli DOMHtml';
+
+        let parrafo = document.getElementById('parrafo');
+        console.log(`valor parrafo: ${parrafo.innerHTML}`);
+        */
+        // practica 2
+
+       //------------------------  getElementsByTagName ------------------------------ //    
+
+
+        let parrafos = document.getElementsByTagName('p');
+        console.log(`N° Parrafos: ${parrafos.length}`);
+
+        for(let i=0; i < parrafos.length; i++){
+            console.log(`i ${i} - ${parrafos[i].innerHTML}`);
+        }
+
+        let h1 = document.getElementsByTagName('h1');
+        console.log(`N° H1 : ${h1.length}`);
+
+        for(let array of h1){
+        console.log(`N° H1: ${array.innerHTML}`)
+        }
+
+       //------------------------  getElementsByClassName ------------------------------ //    
+
+        
+        let elementos = document.getElementsByClassName('color');
+        console.log(`N° Elementos: ${elementos.length}`);
+
+        for(let elemento of elementos){
+            console.log(`elemento : ${elemento.innerHTML}`);
+        }
+
+       //------------------------  querySelectorAll ------------------------------ //    
+
+       let recuperarEtiqueta = document.querySelectorAll('h1.color');
+        for( let recuperar of recuperarEtiqueta){
+            console.log(`Solo H1 Azul: ${recuperar.innerHTML}`);
+        }
+
+
+        
+
+      
     </script>
     
 </body>
