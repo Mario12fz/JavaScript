@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejo de Eventos</title>
+</head>
+
+<!-- Uso de onload al cargar la pagina -->
+<body onload="Entrar()">
+
+    <!-- onmouseover = cambiar color al tener el cursor encima, onmouseout = al quitar el cursor cambia a color azul -->
+    <h1 id="titulo" onmouseover="rojo(this)" onmouseout="azul(this)">Titulo</h1>
+    <h2 id="error" onmousedown="red(this)" onmouseup="green(this)">ERROR</h2>
+
+    <h1 onclick="this.innerHTML= 'Que pretendes hdp'" >Manejo de Eventos</h1>
+    <h2 onclick="CambiarSubTitulo(this)">Ma Vic</h2>
+    <h3 id="txt">Texto1</h3>
+    <br><br>
+    Nombre  <input type="text" onchange="Convertir(this)">
+    <br>
+    <div id="mostrar"></div>
+    <br>
+    <h4 id="fecha"></h4>
+    <script>
+            function CambiarSubTitulo(subTitulo){
+                subTitulo.innerHTML = 'Mi vida';
+            }
+
+            document.getElementById('txt').onclick = cambiarTexto;
+
+            function cambiarTexto(){
+                document.getElementById('txt').innerHTML = 'Texto2';
+            }
+
+            function Entrar(){
+                alert('Entrando a la página web');
+
+                let texto = '';
+
+                if(navigator.cookieEnabled){
+                    texto = 'Cookies están habilitadas';
+                }else{
+                    texto = 'Cookies están inHabilitadas';
+                }
+
+                let date = new Date();
+
+
+                document.getElementById('fecha').innerHTML = date.toDateString();
+                document.getElementById('mostrar').innerHTML = texto;
+            }
+
+            function Convertir(nombreImput){
+                nombreImput.value = nombreImput.value.toUpperCase();
+            }
+
+            function rojo(titulo){
+                titulo.style.color = 'red';
+            }
+
+            function azul(titulo){
+                titulo.style.color = 'blue';
+            }
+
+            function red(error){
+                error.style.color = 'red';
+            }
+
+            function green(error){
+                error.style.color = 'green';
+            }
+    </script>
+</body>
+</html>

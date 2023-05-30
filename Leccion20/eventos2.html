@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+</head>
+<body>
+
+    <h1 id="titulo"> Manejo de Eventos </h1>
+    <br>
+    <!-- 
+    Nombre: <input type="text"  onfocus="cambiar(this)" onblur="regresar(this)" >
+    <br><br>
+    Apellido: <input type="text"  onfocus="cambiar(this)" onblur="regresar(this)" >
+    -->
+    
+    <!--    addEventListener -->
+
+    Nombre: <input type="text"   id="nombre">
+    <br><br>
+    Apellido: <input type="text" id="apellido" >
+    
+    <script>
+        /*
+        function cambiar(elementInput){
+            elementInput.style.background = 'yellow';
+        }
+
+        function regresar(elementInput){
+            elementInput.style.background = 'white';
+        } */
+
+
+        // Con funcion flecha el codigo no se puede reutilizar
+
+        document.getElementById('nombre').addEventListener('focus', (evento) =>{
+            evento.target.style.background = 'pink';
+        });
+        document.getElementById('nombre').addEventListener('blur', (evento) => {
+            evento.target.style.background = 'salmon';
+        });
+
+        // ********************************************************
+
+        document.getElementById('apellido').addEventListener('focus', cambiar);
+        document.getElementById('apellido').addEventListener('blur', regresar);
+
+        function cambiar(evento){
+           let componente = evento.target; 
+           componente.style.background = 'orange';
+        }
+
+        function regresar(evento){
+            let componente = evento.target;
+            componente.style.background = 'white';
+        }
+
+        
+
+    </script>
+</body>
+</html>

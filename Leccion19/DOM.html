@@ -8,7 +8,17 @@
 </head>
 <body>
 
+    <h1 id="titulo" >Binvenidos</h1>
+    <br>
+    <img id="imagen" src="http://globalmentoring.com.mx/imagenes/javascript.png"/>
+    <br>
     <button onclick="Mostrar()">Mostrar</button>
+    <br><br>
+    <button onclick="Siguiente()">Siguiente</button>
+    <br><br>
+    <button onclick="CambiarImg()">Cambiar Imagen</button>
+    <br><br>
+    <button onclick="CambiarColor()">Cambiar Color</button>
     <br>
 
     <script>
@@ -16,6 +26,18 @@
 
         function Mostrar(){
             document.write('Hola mi rey');
+        }
+
+        function Siguiente(){
+            document.getElementById('titulo').innerHTML += '<br>Esta es mi pagina web';
+        }
+
+        function CambiarImg(){
+            document.getElementById('imagen').src = 'http://globalmentoring.com.mx/imagenes/html5.png';
+        }
+
+        function CambiarColor(){
+            document.getElementById('titulo').style.color = 'purple';
         }
     </script>
     
